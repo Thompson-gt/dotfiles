@@ -1,0 +1,46 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+#the settings for the dir in the command line
+[directory]
+truncation_length = 2
+truncation_symbol = '…/'
+style = 'italic green'
+home_symbol = '󰋜'
+
+# Replace the '❯' symbol in the prompt with '➜'
+[character] # The name of the module we are configuring is 'character'
+#❥
+success_symbol = '[❥](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+error_symbol = '[🛑](bold red)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+#display when the sudo pass is cached
+[sudo]
+style = 'italic blue'
+format = '[as sudo]($style) '
+disabled = false
+#display the battery percent of laptop (ten and under is done automaticly)
+#[battery]
+#full_symbol = '🔋'
+#charging_symbol = '⚡️ '
+#
+#[[battery.display]] 
+#threshold = 100 
+#style = 'bold green'
+#charging_symbol = ''
+#
+#[[battery.display]] 
+#threshold = 55
+#style = 'bold yellow'
+#
+#[[battery.display]] 
+#threshold = 99
+#style = 'bold green'
+[battery]
+disabled = true
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+# language icons
+[golang]
+symbol = "ﳑ"
+
