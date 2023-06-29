@@ -15,7 +15,6 @@ export EDITOR=nvim;
 RANGER_LOAD_DEFAULT_RC=false;
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -83,7 +82,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #the browser used in web search is the systems default browser
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
+plugins=(git zsh-autosuggestions web-search)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=50'
 ZSH_WEB_SEARCH_ENGINES=(
 music "https://open.spotify.com/"
@@ -117,13 +116,22 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias nvim='/usr/local/nvim/nvim'
-alias home='/home/akuu'
+#alias nvim='/usr/local/nvim/nvim'
+#used to open image in browser
 alias image='xdg-open'
 alias show='kitty +kitten icat'
 alias icat='kitty +kitten icat'
 alias cdiff='kitty +kitten diff'
+# need this so i can use sudo with aliases
+alias sudo='sudo '
+alias pac='pacman'
+alias nv='nvim'
+# so a new quote will be generated when clear is ran
+alias clear='clear && getquote'
 #custom functions to use as commands
+getquote(){
+   curl https://zenquotes.io/api/random -s | python3 -c "import json, sys; obj=json.load(sys.stdin); print('{}\n\t-{}'.format(obj[0]['q'],obj[0]['a']));"
+}
 lockfile(){
     sudo chown root "$1"
     sudo chmod go-rw "$1"
@@ -156,9 +164,13 @@ eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 #allow control backspace
 bindkey '^H' backward-kill-word
+#use control + space to accept zsh completion
+bindkey '^ ' autosuggest-accept
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #command to display quote when every new terminal window is opened
 curl https://zenquotes.io/api/random -s | python3 -c "import json, sys; obj=json.load(sys.stdin); print('{}\n\t-{}'.format(obj[0]['q'],obj[0]['a']));"
 
+# will enable syntax highlighing for the commands in bash
+source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

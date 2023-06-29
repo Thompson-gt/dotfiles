@@ -23,3 +23,6 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "150"
 --this is to allow the word to be deleted even if it was multiple insert modes ago
 vim.opt.backspace = [[indent,eol,start]]
+--allow for vim to access clipboard
+vim.opt.clipboard = "unnamed"
+

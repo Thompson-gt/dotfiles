@@ -1,0 +1,132 @@
+/*******************************************************
+ * ROFI configs i3 keyhint-menu for EndeavourOS
+ * Maintainer: joekamprad [joekamprad //a_t// endeavouros.com]
+ *******************************************************/
+configuration {
+    font:                "Noto Sans Regular 13";
+    show-icons:          false;
+    icon-theme:          "Qogir";
+    display-drun:        "KeyHint";
+    drun-display-format: "{name}";
+    scroll-method:       0;
+    disable-history:     false;
+    fullscreen:          false;
+    hide-scrollbar:      true;
+    sidebar-mode:        false;
+}
+
+
+window {
+    background-color: #0f0f0a;
+    border:           0;
+    padding:          30;
+    background-color: #0f0f0a;
+}
+listview {
+    lines:   9;
+    columns: 3;
+    background-color: #0f0f0a;
+}
+mainbox {
+    border:  0;
+    padding: 0;
+    background-color: inherit;
+}
+message {
+    border:       2px 0px 0px;
+    border-color: transparent;
+    padding:      1px;
+}
+listview {
+    fixed-height: 0;
+    border-color: transparent;
+    spacing:      8px;
+    scrollbar:    false;
+    padding:      2px 0px 0px;
+    background-color: inherit;
+}
+element {
+    border:  0;
+    padding: 1px;
+
+}
+element-text {
+    background-color: inherit;
+    text-color:       black/90%;
+}
+element.normal.normal {
+    background-color: inherit;
+    text-color:       inherit;
+}
+element.normal.active {
+    background-color: #4cd770;
+    text-color:       inherit;
+}
+element.selected.normal {
+    background-color:  black/15%;
+    text-color:        #4cd770;
+}
+element.selected.active {
+    background-color:  inherit;
+    text-color:        #4cd770;
+}
+element.alternate.normal {
+    background-color:  inherit;
+    text-color:        inherit;
+}
+element.alternate.urgent {
+    background-color:  inherit;
+    text-color:        inherit;
+}
+element.alternate.active {
+    background-color:  inherit;
+    text-color:        inherit;
+}
+scrollbar {
+    width:        4px;
+    border:       0;
+    handle-color: black;
+    handle-width: 8px;
+    padding:      0;
+}
+mode-switcher {
+    border:       2px 0px 0px;
+    border-color: transparent;
+}
+button {
+    spacing:    0;
+    text-color: yellow;
+}
+button.selected {
+    background-color: inherit;
+    text-color:       inherit;
+}
+inputbar {
+    spacing:    0;
+    padding:    1px;
+    background-color: #0f0f0a;
+}
+case-indicator {
+    spacing:    0;
+    background-color: inherit;
+}
+entry {
+    spacing:    0;
+    text-color: #4cd770;
+    background-color: inherit;
+}
+prompt {
+    spacing:    0;
+    text-color: #4cd770;
+    background-color: inherit;
+}
+inputbar {
+    background-color: black/90%;
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+textbox-prompt-colon {
+    expand:     false;
+    str:        " > ";
+    text-color: #4cd770;
+    background-color: inherit;
+}

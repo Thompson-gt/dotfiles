@@ -20,14 +20,20 @@ return require('packer').startup(function(use)
   vim.cmd[[colorscheme tokyonight-storm]]
   -- undo tree
   use('mbbill/undotree')
-  --lsp server
+
+  use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+
+--lsp server
   use {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v2.x',
   requires = {
     -- LSP Support
     {'neovim/nvim-lspconfig'},             -- Required
-    {                                      -- Optional
+  {                                      -- Optional
       'williamboman/mason.nvim',
       run = function()
         pcall(vim.cmd, 'MasonUpdate')
@@ -37,6 +43,7 @@ return require('packer').startup(function(use)
 
     -- Autocompletion
     {'hrsh7th/nvim-cmp'},     -- Required
+    {'hrsh7th/cmp-nvim-lua'},
     {'hrsh7th/cmp-nvim-lsp'}, -- Required
     {'L3MON4D3/LuaSnip'},     -- Required
   }

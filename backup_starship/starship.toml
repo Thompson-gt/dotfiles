@@ -2,7 +2,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 #the settings for the dir in the command line
 [directory]
-truncation_length = 2
+truncation_length = 4
 truncation_symbol = '…/'
 style = 'italic green'
 home_symbol = '󰋜'
@@ -10,8 +10,8 @@ home_symbol = '󰋜'
 # Replace the '❯' symbol in the prompt with '➜'
 [character] # The name of the module we are configuring is 'character'
 #❥
-success_symbol = '[❥](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
-error_symbol = '[🛑](bold red)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+success_symbol = '[δ](green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+error_symbol = '[Σ](red)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
 #display when the sudo pass is cached
 [sudo]
 style = 'italic blue'
@@ -43,4 +43,5 @@ disabled = true
 # language icons
 [golang]
 symbol = "ﳑ"
+
 

@@ -5,9 +5,11 @@ window:
 colors:
  # Default Colors
  primary:
-   background: '#212121'
-   foreground: '#f1f1f1'
+   background: '#0f0f0a'
+   foreground: '#637d75'
  # Normal colors
+ 
+
  normal:
    black:   '#212121'
    red:     '#c30771'
@@ -31,19 +33,23 @@ colors:
 #Fonts
 font:
   normal:
-    family: Hasklug NF 
+    family: Hasklug Nerd Font 
     style: Regular
 
   bold:
-    family: HaskLug NF 
+    family: Hasklug Nerd Font  
     style: Bold
 
   italic:
-    family: HaskLug NF 
+    family: Hasklug Nerd Font  
     style: Italic
 
   bold_italic:
-    family: HaskLug NF 
+    family: Hasklug Nerd Font  
     style: Bold Italic
 
-  size: 15
+  size: 9 
+
+
+keybindings:
+  - { key: Back, mods: Control, chars: "\x17" }
