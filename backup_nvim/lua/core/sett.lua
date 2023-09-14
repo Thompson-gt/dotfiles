@@ -25,4 +25,6 @@ vim.opt.colorcolumn = "150"
 vim.opt.backspace = [[indent,eol,start]]
 --allow for vim to access clipboard
 vim.opt.clipboard = "unnamed"
+-- set the primary split location to be bellow the current buffer
+vim.opt.splitbelow = true
 
