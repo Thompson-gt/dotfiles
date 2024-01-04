@@ -11,8 +11,10 @@ vim.keymap.set("n","<leader>fc", "<cmd>wq<cr>")
 -- map to close and not save
 vim.keymap.set("n","<leader>Fc", "<cmd>q!<cr>")
 -- re-center the screen when half page jumping
-vim.keymap.set("n","<C-d>","<C-d>zz")
-vim.keymap.set("n","<C-u>","<C-u>zz")
+-- the carrot symbol will move the cursor to the front of the line
+vim.keymap.set("n", "zz", "zz^")
+vim.keymap.set("n","<C-d>","<C-d>zz^")
+vim.keymap.set("n","<C-u>","<C-u>zz^")
 --opens a terminal in the current dir(will need to use vim bindings to move around
 vim.keymap.set("n","<leader>ft",":split term://zsh<CR>")
 -- this will allow the esc key to return me to normal mode when using the terminal split
@@ -45,8 +47,20 @@ vim.keymap.set("v","<C-k>",":m '<-2<CR>gv=gv")
 vim.keymap.set("i","<C-f>", "<C-x><C-f>")
 
 
+-- move a line without going to the end
+vim.keymap.set("n","j", "gj")
+vim.keymap.set("n","k", "gk")
+
+-- move to the start and the end of the lines
+vim.keymap.set("n", "H", "^")
+vim.keymap.set("n", "L", "$")
+vim.keymap.set("v", "H", "^")
+vim.keymap.set("v", "L", "$")
+
 -- to add a new line in normal mode
---vim.api.nvim_set_keymap("n", "<leader>o", "o<C-c>",{noremap=true})
 vim.keymap.set("n", "<leader>o", "o<C-c>")
 
-
+-- remap the ways to exit insert mode
+vim.api.nvim_set_keymap("i", "<C-i>","<C-c>",{noremap = true})
+--vim.keymap.set("i", "<C-i>" ,"<C-c>")
+--vim.keymap.set("i", "<C-a>" ,"<C-c>")

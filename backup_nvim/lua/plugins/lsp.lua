@@ -14,9 +14,11 @@ return {
 
     -- Autocompletion
     {'hrsh7th/nvim-cmp'},     -- Required
-    {'hrsh7th/cmp-nvim-lua'},
     {'hrsh7th/cmp-nvim-lsp'}, -- Required
     {'L3MON4D3/LuaSnip'},     -- Required
+    {"hrsh7th/cmp-path"},
+    {"hrsh7th/cmp-buffer"},
+    {"hrsh7th/cmp-nvim-lua"},
 },
 config = function()
     local lsp = require("lsp-zero")
@@ -34,11 +36,18 @@ config = function()
     local cmp = require('cmp')
     cmp.setup({
         sources = {
-            {name = 'nvim_lsp','cmp-nvim-lua'},
+            {name = 'nvim_lsp','cmp-nvim-lua',"hrsh7th/cmp-buffer","hrsh7th/cmp-path"},
+        },
+        experimental = {
+            ghost_text = true,
         },
         window = {
-            completion = cmp.config.window.bordered(),
-            documentation = cmp.config.window.bordered(),
+            completion = cmp.config.window.bordered({
+                winhighlight = "FloatBorder:DiagnosticSignOk,CursorLine:SpellRare"
+            }),
+            documentation = cmp.config.window.bordered({
+                winhighlight = "FloatBorder:DiagnosticSignOk,CursorLine:SpellRare"
+            }),
         },
         mapping = {
             -- `control space` key to confirm completion
@@ -49,7 +58,12 @@ config = function()
         },
     })
 
-
+    -- Enable completing paths in :
+    cmp.setup.cmdline(':', {
+        sources = cmp.config.sources({
+            { name = 'path' }
+        })
+    })
 
     lsp.set_preferences({
         suggest_lsp_servers = false,
@@ -61,7 +75,7 @@ config = function()
         }
     })
 
-    lsp.on_attach(function(client, bufnr)
+    lsp.on_attach(function(_, bufnr)
         local opts = {buffer = bufnr, remap = false}
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
         vim.keymap.set("n", "gh", function() vim.lsp.buf.hover() end, opts)
@@ -76,13 +90,21 @@ config = function()
         vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
         vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
         vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+        vim.api.nvim_set_keymap('n', '<leader>dd', '<cmd>Telescope diagnostics<CR>', { noremap = true, silent = true })
     end)
+
 
     lsp.setup()
 
-    vim.diagnostic.config({
-        virtual_text = true
-    })
+    vim.diagnostic.config {
+        underline = true,
+        italic = true,
+        virtual_text = true,
+        signs = true,
+        severity_sort = true,
+        update_in_insert = true,
+    }
+
 end
     }
 

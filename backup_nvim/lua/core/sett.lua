@@ -20,11 +20,12 @@ vim.opt.incsearch = true
 --fast updates?
 vim.opt.updatetime = 50
 --line on the right side of the screen
-vim.opt.colorcolumn = "150"
+vim.opt.colorcolumn = "120"
 --this is to allow the word to be deleted even if it was multiple insert modes ago
 vim.opt.backspace = [[indent,eol,start]]
 --allow for vim to access clipboard
-vim.opt.clipboard = "unnamed"
+vim.opt.clipboard = "unnamedplus"
 -- set the primary split location to be bellow the current buffer
 vim.opt.splitbelow = true
-
+-- this is to the cursor will stay a block in any mode
+vim.opt.guicursor= ""

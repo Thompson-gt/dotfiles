@@ -2,13 +2,18 @@
 window:
  opacity: 0.8
 # Colors (Pencil Dark)
+cursor_style: Block
+hide_cursor_when_typing: false
+custom_cursor_colors: true
 colors:
  # Default Colors
  primary:
    background: '#0f0f0a'
    foreground: '#637d75'
  # Normal colors
- 
+ cursor:
+   text: '#080808'
+   cursor: '#4cd770'
 
  normal:
    black:   '#212121'
@@ -48,8 +53,7 @@ font:
     family: Hasklug Nerd Font  
     style: Bold Italic
 
-  size: 9 
-
+  size: 16 
 
 keybindings:
   - { key: Back, mods: Control, chars: "\x17" }

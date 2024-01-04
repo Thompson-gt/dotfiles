@@ -1,0 +1,58 @@
+[cursor.style]
+shape = "Block"
+blinking = "Never"
+
+[[keyboard.bindings]]
+chars = "\u0017"
+key = "Back"
+mods = "Control"
+
+[colors.bright]
+black = "#212121"
+blue = "#20bbfc"
+cyan = "#4fb8cc"
+green = "#5fd7af"
+magenta = "#6855de"
+red = "#fb007a"
+white = "#f1f1f1"
+yellow = "#f3e430"
+
+[colors.cursor]
+cursor = "#4cd770"
+text = "#080808"
+
+[colors.normal]
+black = "#212121"
+blue = "#008ec4"
+cyan = "#20a5ba"
+green = "#10a778"
+magenta = "#523c79"
+red = "#c30771"
+white = "#e0e0e0"
+yellow = "#a89c14"
+
+[colors.primary]
+background = "#0f0f0a"
+foreground = "#637d75"
+
+[font]
+size = 17
+
+[font.bold]
+family = "Hasklug Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "Hasklug Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "Hasklug Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "Hasklug Nerd Font"
+style = "Regular"
+
+[window]
+opacity = 0.8
