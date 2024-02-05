@@ -61,6 +61,6 @@ vim.keymap.set("v", "L", "$")
 vim.keymap.set("n", "<leader>o", "o<C-c>")
 
 -- remap the ways to exit insert mode
-vim.api.nvim_set_keymap("i", "<C-i>","<C-c>",{noremap = true})
+--vim.api.nvim_set_keymap("i", "<C-i>","<C-c>",{noremap = true})
 --vim.keymap.set("i", "<C-i>" ,"<C-c>")
 --vim.keymap.set("i", "<C-a>" ,"<C-c>")

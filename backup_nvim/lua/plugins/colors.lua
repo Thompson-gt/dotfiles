@@ -89,6 +89,8 @@
                     TermCursor = { bg = "#080808", fg = "#4cd770"},
                     TelescopeMatching = { bg = "#080808", fg = "#4cd770"},
                     TelescopePreviewLink = { bg = "#080808", fg = "#4cd770"},
+                    FloatBorder = {fg = "#4cd770"},
+                    --LspSignatureActiveParameter = {bg = "#4cd770"},
                     --TypeDefinition = {fg = "#00ffdd"},
                    -- Operator = {fg = "#00ffdd"},
                    -- Keyword= {fg = "#033a1f"},
