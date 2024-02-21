@@ -8,6 +8,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+#STOP DELETING THIS GO LITERALLY NEEDS THIS TO RUN
+export PATH="$PATH:/usr/local/go/bin"
 #set the editors
 export VISUAL=nvim;
 export EDITOR=nvim;
