@@ -21,18 +21,21 @@ function __history_previous_command_arguments
   end
 end
 
+#function to get the previous used command
+function __history_previous_command_start 
+    commandline -t (string split " " $history[1])[1];
+end
+
+#function to get the last argument in the previous command
+function __history_previous_command_last
+    set input (string split " " $history[1]);
+    set size (count $input);
+    commandline -t $input[-1];
+end
+
 #custom functions to use as commands
 function __getquote
     curl https://zenquotes.io/api/random -s | python3 -c "import json, sys; obj=json.load(sys.stdin); print('{}\n\t-{}'.format(obj[0]['q'],obj[0]['a']));"
-end
-
-# The bindings for !! and !$
-if [ "$fish_key_bindings" = "fish_vi_key_bindings" ];
-  bind -Minsert ! __history_previous_command
-  bind -Minsert '$' __history_previous_command_arguments
-else
-  bind ! __history_previous_command
-  bind '$' __history_previous_command_arguments
 end
 #END OF FUNCIONS
 
@@ -45,24 +48,36 @@ set -Ux STARSHIP_CONFIG ~/.config/starship/starship.toml
 #END EXPORT 
 
 #ALIASES
-alias nv='nvim'
 alias image='xdg-open'
 alias show='kitty +kitten icat'
 alias icat='kitty +kitten icat'
 alias cdiff='kitty +kitten diff'
-# need this so i can use sudo with aliases
-alias sudo='sudo '
-alias pac='pacman'
-alias nv='nvim'
 # so a new quote will be generated when clear is ran
 alias clear='clear && __getquote'
-
 alias ls='ls --color=auto'
 alias ll='ls -lav --ignore=..'   # show long listing of all except ".."
 #END ALIASES
 
+#ABRRIVATIONS
+# need this so i can use sudo with aliases
+abbr --add pac --position anywhere pacman 
+abbr --add nv --position anywhere nvim 
+#ABRRIVATIONS END
 
 #KEYBINDS
+# The bindings for !! and !$
+if [ "$fish_key_bindings" = "fish_vi_key_bindings" ];
+  bind -Minsert ! __history_previous_command
+  bind -Minsert '$' __history_previous_command_arguments
+  bind -Minsert '@' __history_previous_command_start
+  bind -Minsert '#' __history_given_number 
+else
+  bind ! __history_previous_command
+  bind '$' __history_previous_command_arguments
+  bind '@' __history_previous_command_start
+  bind '#' __history_previous_command_last
+end
+
 bind -m default -k nul 'accept-autosuggestion'
 #END KEYBINDS
 
