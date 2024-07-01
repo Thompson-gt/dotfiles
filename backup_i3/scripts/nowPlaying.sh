@@ -2,10 +2,18 @@
 # this will be the script to display more info for the song when clicked
 WORKING_FILE=~/tmp/ablumArt.temp
 players=$(playerctl --list-all)
-
+blacklist=("9anime" "Twitch")
 if [[ $players == *"firefox"* ]]; then
     data=$(playerctl --player=firefox metadata)
-    if [[ $data == *"Twitch"* ]]; then
+    block=false
+
+    for item in "${blacklist[@]}"; do 
+        if [[ $data == *"$item"* ]]; then
+            block=true
+        fi
+    done
+
+    if [ $block = true ]; then
         SONG=$(playerctl   --player=spotify metadata --format "{{title}}")
         ARTIST=$(playerctl --player=spotify metadata --format "{{artist}}")
         ALBUM=$(playerctl --player=spotify metadata --format "{{album}}")

@@ -301,11 +301,11 @@ bindsym $mod+Shift+s exec scrot ~/Screenshots/%Y-%m-%d-%T-screenshot.png && noti
 #scratchpads 
 exec --no-startup-id LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify
 for_window [class="Spotify"] , move scratchpad
-bindsym $mod+m [class="Spotify"] scratchpad show; move position center
+bindsym $mod+m [class="Spotify"] scratchpad show resize set 1100 900; move position center
 
 exec --no-startup-id alacritty --class scratchterm,scratchterm
 for_window [class="scratchterm"] , move scratchpad
-bindsym $mod+t [class="scratchterm"] scratchpad show; move position center
+bindsym $mod+t [class="scratchterm"] scratchpad show resize set 1100 900; move position center
 
 
 # Power Profiles menu switcher (rofi)

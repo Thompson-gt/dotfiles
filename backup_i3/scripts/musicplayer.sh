@@ -1,6 +1,6 @@
 #!/bin/bash
 players=$(playerctl --list-all)
-
+blacklist=("9anime" "Twitch")
 
 function handleFirefix() {
     s=$(playerctl --player=firefox metadata --format "{{trunc(xesam:title,30)}} -{{trunc(xesam:artist,20)}}")
@@ -28,7 +28,14 @@ else
 
 if [[ $players == *"firefox"* ]]; then
     data=$(playerctl --player=firefox metadata)
-    if [[ $data == *"Twitch"* ]]; then
+    block=false
+    for item in "${blacklist[@]}"; do 
+        if [[ $data == *"$item"* ]]; then
+            block=true
+        fi
+    done
+
+    if [ $block = true ]; then
         handleSpotify
     else
         handleFirefix
