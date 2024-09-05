@@ -1,4 +1,4 @@
 function lockdir 
-    sudo chown --recursive root "$1"
-    sudo chmod --recursive go-rwx "$1"
+    sudo chown --recursive root $argv[1]
+    sudo chmod --recursive go-rwx $argv[1]
 end

@@ -1,4 +1,5 @@
 function lockfile
-    sudo chown root "$1"
-    sudo chmod go-rw "$1"
+    sudo chown root $argv[1]
+    sudo chmod go-rw $argv[1]
+    
 end

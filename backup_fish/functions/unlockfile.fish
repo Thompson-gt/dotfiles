@@ -1,4 +1,4 @@
 function unlockfile
-    sudo chown $USER "$1"
-    sudo chmod ug+rw "$1"
+    sudo chown $USER $argv[1]
+    sudo chmod ug+rw $argv[1]
 end
