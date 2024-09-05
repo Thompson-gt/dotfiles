@@ -40,7 +40,7 @@ config = function()
             {name = 'nvim_lsp','cmp-nvim-lua',"hrsh7th/cmp-buffer","hrsh7th/cmp-path"},
         },
         experimental = {
-            ghost_text = true,
+            --ghost_text = true,
         },
         window = {
             completion = cmp.config.window.bordered({
@@ -93,7 +93,7 @@ config = function()
         vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
         vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
         vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-        vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+        vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
         vim.api.nvim_set_keymap('n', '<leader>dd', '<cmd>Telescope diagnostics<CR>', { noremap = true, silent = true })
     end)
 
