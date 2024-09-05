@@ -56,6 +56,7 @@ alias cdiff='kitty +kitten diff'
 alias clear='clear && __getquote'
 alias ls='ls --color=auto'
 alias ll='ls -lav --ignore=..'   # show long listing of all except ".."
+alias search='echo "use control+r to search shell history"'
 #END ALIASES
 
 #ABRRIVATIONS
