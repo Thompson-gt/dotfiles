@@ -296,7 +296,7 @@ bindsym $mod+b exec /usr/bin/brave
 bindsym $mod+Shift+b exec /usr/bin/brave --incognito
 #bindsym $mod+m exec LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify
 bindsym $mod+n exec /usr/bin/thunar
-bindsym $mod+Shift+s exec scrot ~/Screenshots/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/Screenshots/$(date +"%Y-%m-%d-%T")-screenshot.png"
+bindsym $mod+Shift+s exec scrot --focused --silent --file ~/Screenshots/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/Screenshots/$(date +"%Y-%m-%d-%T")-screenshot.png"
 
 #scratchpads 
 exec --no-startup-id LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify
