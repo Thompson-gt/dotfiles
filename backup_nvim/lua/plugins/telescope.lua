@@ -22,6 +22,7 @@ return {
            --builtin.live_grep({grep_open_files=true})
            -- use telescope to search the open file for grep string
            builtin.live_grep({search_dirs={vim.fn.expand("%:p")}})
+           --builtin.current_buffer_fuzzy_find({layout_stategy='vertical'})'<leader
         end)
         local colors = {
             blue   = '#80a0ff',

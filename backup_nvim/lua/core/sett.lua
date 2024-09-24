@@ -27,5 +27,12 @@ vim.opt.backspace = [[indent,eol,start]]
 vim.opt.clipboard = "unnamedplus"
 -- set the primary split location to be bellow the current buffer
 vim.opt.splitbelow = true
+--set the primary split location to be to the right of the current bufffer
+vim.opt.splitright = true
 -- this is to the cursor will stay a block in any mode
 vim.opt.guicursor= ""
+-- change the way the file tree looks in the viewer
+vim.cmd("let g:netrw_liststyle=3")
+-- make the preview window open vertically
+--vim.cmd("let g:netrw_preview=1")
+--vim.cmd("let g:netrw_altv=1")

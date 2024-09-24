@@ -3,7 +3,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 --map to open the file tree
+-- will open the default file explore 
 vim.keymap.set("n","<leader>e", "<cmd>Ex<cr>")
+--will the other expoler to still view the buffer that is opened while a expoler opens on the left hand side
+--vim.keymap.set("n", "<leader>e", "<cmd>Lexplore<cr>")
 -- map to save file
 vim.keymap.set("n","<leader>fs", "<cmd>w<cr>")
 --map to save and close the file
