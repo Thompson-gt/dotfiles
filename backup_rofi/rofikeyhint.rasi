@@ -3,7 +3,7 @@
  * Maintainer: joekamprad [joekamprad //a_t// endeavouros.com]
  *******************************************************/
 configuration {
-    font:                "Iosevka Nerd Font italic 15";
+    font:                "Iosevka Nerd Font italic 16";
     show-icons:          false;
     icon-theme:          "Qogir";
     display-drun:        "KeyHint";
@@ -11,20 +11,14 @@ configuration {
     scroll-method:       0;
     disable-history:     false;
     fullscreen:          false;
-    hide-scrollbar:      true;
-    sidebar-mode:        false;
 }
 
 
 window {
     background-color: #0f0f0a;
-    border:           0;
+    border:           1px;
+    border-color:     #4cd770;
     padding:          30;
-    background-color: #0f0f0a;
-}
-listview {
-    lines:   10;
-    columns: 4;
     background-color: #0f0f0a;
 }
 mainbox {
@@ -32,46 +26,45 @@ mainbox {
     padding: 0;
     background-color: inherit;
 }
-message {
-    border:       2px 0px 0px;
-    border-color: transparent;
-    padding:      1px;
-}
+
 listview {
+    lines:   10;
+    columns: 4;
     fixed-height: 0;
     border-color: transparent;
     spacing:      10px;
     scrollbar:    false;
+    cycle:        true;
+    dynamic:      true;
     padding:      2px 0px 0px;
-    background-color: inherit;
+    background-color: #0f0f0a;
 }
+
 element {
     border:  1;
+    border-radius:  10px;
     padding: 1px;
-
-}
-element-text {
-    background-color: inherit;
-    text-color:       black/90%;
+    border-color: black/90%;
 }
 element.normal.normal {
     background-color: inherit;
     text-color:       inherit;
+}
+element.alternate.normal {
+    background-color:  inherit;
+    text-color:        inherit;
 }
 element.normal.active {
     background-color: inherit;
     text-color:       #4cd770;
 }
 element.selected.normal {
-    background-color:  #0a1200;
+    background-color:  black/85%;
+    text-color:        #4cd770;
 }
 element.selected.active {
     background-color:  inherit;
     text-color:        #4cd770;
-}
-element.alternate.normal {
-    background-color:  inherit;
-    text-color:        inherit;
 }
 element.alternate.urgent {
     background-color:  inherit;
@@ -81,51 +74,32 @@ element.alternate.active {
     background-color:  inherit;
     text-color:        #4cd770;
 }
-scrollbar {
-    width:        4px;
-    border:       0;
-    handle-color: black;
-    handle-width: 8px;
-    padding:      0;
-}
-mode-switcher {
-    border:       2px 0px 0px;
-    border-color: transparent;
-}
-button {
-    spacing:    0;
-    text-color: yellow;
-}
-button.selected {
-    background-color: inherit;
-    text-color:       #4cd770;
-}
 inputbar {
     spacing:    0;
     padding:    1px;
     background-color: #0f0f0a;
+    background-color: black/90%;
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
 case-indicator {
-    spacing:    0;
-    background-color: inherit;
+    enabled:     false;
 }
 entry {
     spacing:    0;
     text-color: #4cd770;
     background-color: inherit;
+    placeholder:     "search command";
 }
 prompt {
     spacing:    0;
     text-color: #4cd770;
     background-color: inherit;
-}
-inputbar {
-    background-color: black/90%;
-    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+    contents: "hello";
+    text-color:   blue;
 }
 textbox-prompt-colon {
     expand:     false;
-    str:        " > ";
+    str:        "  ";
     text-color: #4cd770;
     background-color: inherit;
 }
