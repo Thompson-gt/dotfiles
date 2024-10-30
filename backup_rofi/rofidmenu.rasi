@@ -94,15 +94,15 @@ listview {
     scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;
+    fixed-height:                false;
+    fixed-columns:               false;
     
-    spacing:                     0px;
+    spacing:                     25px;
     margin:                      0px;
     padding:                     0px;
-    border:                      0px solid;
-    border-radius:               0px;
-    border-color:                @selected;
+    border:                      2px solid;
+    border-radius:               10px;
+    border-color:                #0f0f0a;
     background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      "default";
@@ -119,22 +119,25 @@ element {
     enabled:                     true;
     spacing:                     15px;
     margin:                      10px;
-    padding:                     20px 10px;
+    padding:                     25px 10px;
     border:                      0px solid;
-    border-radius:               10px;
+    border-radius:               60px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
-    orientation:                 vertical;
     cursor:                      pointer;
 }
 element normal.normal {
     background-color:             #0f0f0a;
-    text-color:                  @foreground;
+    text-color:                  black/90%;
+}
+element alternate.normal {
+    background-color:             #0f0f0a;
+    text-color:                  black/90%;
 }
 element selected.normal {
-    background-color:            black;
-    text-color:                  @foreground;
+    background-color:            black/85%;
+    text-color:                  #4cd770;
 }
 element-icon {
     background-color:            transparent;
@@ -142,21 +145,9 @@ element-icon {
     size:                        34px;
     cursor:                      inherit;
 }
-element-text {
-    background-color:            transparent;
-    text-color:                  black/90%;
-    highlight:                   underline #4cd770;
-    cursor:                      inherit;
-    vertical-align:              0.5;
-    horizontal-align:            0.5;
-}
 
 
 
-element.alternate.normal {
-    background-color: @inherit;
-    text-color:       @inherit;
-}
 /*****----- Message -----*****/
 error-message {
     padding:                     15px;

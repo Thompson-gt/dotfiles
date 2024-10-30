@@ -157,4 +157,10 @@ element alternate.active {
     text-color:                  DarkRed;
 }
 
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        34px;
+    cursor:                      inherit;
+}
 
