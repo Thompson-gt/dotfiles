@@ -3,7 +3,7 @@
  * Maintainer: joekamprad [joekamprad //a_t// endeavouros.com]
  *******************************************************/
 configuration {
-    font:                "Noto Sans Regular 13";
+    font:                "Iosevka Nerd Font italic 15";
     show-icons:          false;
     icon-theme:          "Qogir";
     display-drun:        "KeyHint";
@@ -23,8 +23,8 @@ window {
     background-color: #0f0f0a;
 }
 listview {
-    lines:   9;
-    columns: 3;
+    lines:   10;
+    columns: 4;
     background-color: #0f0f0a;
 }
 mainbox {
@@ -40,13 +40,13 @@ message {
 listview {
     fixed-height: 0;
     border-color: transparent;
-    spacing:      8px;
+    spacing:      10px;
     scrollbar:    false;
     padding:      2px 0px 0px;
     background-color: inherit;
 }
 element {
-    border:  0;
+    border:  1;
     padding: 1px;
 
 }
@@ -59,12 +59,11 @@ element.normal.normal {
     text-color:       inherit;
 }
 element.normal.active {
-    background-color: #4cd770;
-    text-color:       inherit;
+    background-color: inherit;
+    text-color:       #4cd770;
 }
 element.selected.normal {
-    background-color:  black/15%;
-    text-color:        #4cd770;
+    background-color:  #0a1200;
 }
 element.selected.active {
     background-color:  inherit;
@@ -80,7 +79,7 @@ element.alternate.urgent {
 }
 element.alternate.active {
     background-color:  inherit;
-    text-color:        inherit;
+    text-color:        #4cd770;
 }
 scrollbar {
     width:        4px;
@@ -99,7 +98,7 @@ button {
 }
 button.selected {
     background-color: inherit;
-    text-color:       inherit;
+    text-color:       #4cd770;
 }
 inputbar {
     spacing:    0;
