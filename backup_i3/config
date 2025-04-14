@@ -306,7 +306,7 @@ exec_always --no-startup-id LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify
 for_window [class="Spotify"] , move scratchpad
 bindsym $mod+m [class="Spotify"] scratchpad show resize set 1100 900; move position center
 
-exec_always --no-startup-id alacritty --class scratchterm,scratchterm
+exec --no-startup-id alacritty --class scratchterm,scratchterm
 for_window [class="scratchterm"] , move scratchpad
 bindsym $mod+t [class="scratchterm"] scratchpad show resize set 1100 900; move position center
 
