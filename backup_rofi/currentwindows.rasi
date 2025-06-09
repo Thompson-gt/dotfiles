@@ -32,11 +32,17 @@ configuration {
     textbox-font:                "Iosevka Nerd Font 18";
     element-text-font:           "Iosevka Nerd Font 18";
 
-    background-window:           #0f0f0a;
-    background-normal:           #0f0f0a;
+    // old green colors
+    //background-window:           #0f0f0a;
+    //background-normal:           #0f0f0a;
+    //background-selected:         black;
+    //foreground-normal:           black/90%;
+    //foreground-selected:         #4cd770;
+    background-window:           #121520;
+    background-normal:           #121520;
     background-selected:         black;
     foreground-normal:           black/90%;
-    foreground-selected:         #4cd770;
+    foreground-selected:         #7F00FF;
 }
 
 /*****----- Main Window -----*****/
@@ -48,8 +54,11 @@ window {
     width:                       1100px;
     border-radius:               12px;
     cursor:                      "default";
-    border-color:                #4cd770;
-    background-color:            #0f0f0a;
+    // old green color
+    //border-color:                #4cd770;
+    //background-color:            #0f0f0a;
+    background-color:           #121520;
+    border-color:               #7F00FF;
 }
 
 /*****----- Main Box -----*****/
@@ -74,7 +83,8 @@ inputbar {
     border-radius:               10px;
     border-color:                @selected;
     background-color:            black / 90%;
-    text-color:                  #4cd770;
+    //text-color:                  #4cd770;
+    text-color:                   #7F00FF;
     children:                    [ "prompt", "entry" ];
 }
 
@@ -90,7 +100,8 @@ entry {
     width:                      10px;
     border-color:               #0f0f0a;
     enabled:                    true;
-    text-color:                 #4cd770;
+    //text-color:                 #4cd770;
+    text-color:                 #7F00FF;
     cursor:                     text;
     placeholder:                "  search window";
     placeholder-color:          inherit;
@@ -141,12 +152,14 @@ element alternate.normal {
  
 element selected.normal {
     background-color:            black/90%;
-    text-color:                  #4cd770;
+    //text-color:                  #4cd770;
+    text-color:                  #7F00FF;
 }
 
 element selected.active {
     background-color:            black/90%;
-    text-color:                  #4cd770;
+    //text-color:                  #4cd770;
+    text-color:                  #7F00FF;
 }
 element normal.active {
     background-color:            black/70%;

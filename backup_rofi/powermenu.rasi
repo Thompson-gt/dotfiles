@@ -28,11 +28,17 @@ configuration {
     textbox-font:                "Iosevka Nerd Font 12";
     element-text-font:           "Iosevka Nerd Font 18";
 
-    background-window:           #0f0f0a;
-    background-normal:           #0f0f0a;
+    // old green colors
+    //background-window:           #0f0f0a;
+    //background-normal:           #0f0f0a;
+    //background-selected:         black;
+    //foreground-normal:           black/90%;
+    //foreground-selected:         #4cd770;
+    background-window:           #121520;
+    background-normal:           #121520;
     background-selected:         black;
     foreground-normal:           black/90%;
-    foreground-selected:         #4cd770;
+    foreground-selected:         #7F00FF;
 }
 
 /*****----- Main Window -----*****/

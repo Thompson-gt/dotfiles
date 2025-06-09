@@ -31,9 +31,19 @@ window {
     padding:                     0px;
     border:                      1px solid;
     border-radius:               10px;
-    border-color:                #4cd770;
-    background-color:            #0f0f0a;
+    //border-color:                #4cd770;
+    //background-color:            #0f0f0a;
     cursor:                      "default";
+    background-color:                #121520;
+    border-color:                    #7F00FF;
+
+
+    // old green colors
+    //background-window:           #0f0f0a;
+    //background-normal:           #0f0f0a;
+    //background-selected:         black;
+    //foreground-normal:           black/90%;
+    //foreground-selected:         #4cd770;
 }
 
 /*****----- Main Box -----*****/
@@ -44,7 +54,8 @@ mainbox {
     padding:                     20px;
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;
-    border-color:                #4cd770;
+    //border-color:                #4cd770;
+    border-color:                #7F00FF;
     background-color:            transparent;
     children:                    [ "inputbar", "listview" ];
 }
@@ -59,7 +70,8 @@ inputbar {
     border-radius:               10px;
     border-color:                @selected;
     background-color:            black / 90%;
-    text-color:                  #4cd770;
+    //text-color:                  #4cd770;
+    text-color:                  #7F00FF;
     children:                    [ "prompt", "entry" ];
 }
 
@@ -102,7 +114,8 @@ listview {
     padding:                     0px;
     border:                      2px solid;
     border-radius:               10px;
-    border-color:                #0f0f0a;
+    //border-color:                #0f0f0a;
+    border-color:                #121520;
     background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      "default";
@@ -128,16 +141,19 @@ element {
     cursor:                      pointer;
 }
 element normal.normal {
-    background-color:             #0f0f0a;
+    //background-color:             #0f0f0a;
+    background-color:             #121520;
     text-color:                  black/90%;
 }
 element alternate.normal {
-    background-color:             #0f0f0a;
+    //background-color:             #0f0f0a;
+    background-color:             #121520;
     text-color:                  black/90%;
 }
 element selected.normal {
     background-color:            black/85%;
-    text-color:                  #4cd770;
+    //text-color:                  #4cd770;
+    text-color:                  #7F00FF;
 }
 element-icon {
     background-color:            transparent;

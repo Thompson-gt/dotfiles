@@ -15,11 +15,13 @@ configuration {
 
 
 window {
-    background-color: #0f0f0a;
+    //background-color: #0f0f0a;
     border:           1px;
-    border-color:     #4cd770;
+    //border-color:     #4cd770;
+    border-color:     #7F00FF;
     padding:          30;
-    background-color: #0f0f0a;
+    //background-color: #0f0f0a;
+    background-color: #121520;
 }
 mainbox {
     border:  0;
@@ -37,7 +39,8 @@ listview {
     cycle:        true;
     dynamic:      true;
     padding:      2px 0px 0px;
-    background-color: #0f0f0a;
+    //background-color: #0f0f0a;
+    background-color: #121520;
 }
 
 element {
@@ -56,15 +59,18 @@ element.alternate.normal {
 }
 element.normal.active {
     background-color: inherit;
-    text-color:       #4cd770;
+    //text-color:       #4cd770;
+    text-color: #7F00FF;
 }
 element.selected.normal {
     background-color:  black/85%;
-    text-color:        #4cd770;
+    //text-color:        #4cd770;
+    text-color: #7F00FF;
 }
 element.selected.active {
     background-color:  inherit;
-    text-color:        #4cd770;
+    //text-color:        #4cd770;
+    text-color: #7F00FF;
 }
 element.alternate.urgent {
     background-color:  inherit;
@@ -72,12 +78,14 @@ element.alternate.urgent {
 }
 element.alternate.active {
     background-color:  inherit;
-    text-color:        #4cd770;
+    //text-color:        #4cd770;
+    text-color: #7F00FF;
 }
 inputbar {
     spacing:    0;
     padding:    1px;
     background-color: #0f0f0a;
+    background-color: #121520;
     background-color: black/90%;
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
@@ -86,13 +94,15 @@ case-indicator {
 }
 entry {
     spacing:    0;
-    text-color: #4cd770;
+    //text-color: #4cd770;
+    text-color: #7F00FF;
     background-color: inherit;
     placeholder:     "search command";
 }
 prompt {
     spacing:    0;
-    text-color: #4cd770;
+    //text-color: #4cd770;
+    text-color: #7F00FF;
     background-color: inherit;
     contents: "hello";
     text-color:   blue;
@@ -100,6 +110,7 @@ prompt {
 textbox-prompt-colon {
     expand:     false;
     str:        "  ";
-    text-color: #4cd770;
+    //text-color: #4cd770;
+    text-color: #7F00FF;
     background-color: inherit;
 }
