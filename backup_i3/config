@@ -428,7 +428,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
-exec_always --no-startup-id sleep 1 && feh --bg-fill ~/wallpapers/wallpaperflare.com_wallpaper\(4\).jpg
+exec_always --no-startup-id sleep 1 && feh --bg-fill ~/wallpapers/noragami.jpg
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
@@ -514,7 +514,7 @@ for_window [class="urxvt"] border pixel 1
 set $darkbluetrans	#08052be6
 set $darkblue		#08052b
 set $lightblue		#5294e2
-set $urgentred		#e53935
+set $urgentred		#702963
 set $white		#ffffff
 set $black		#000000
 set $purple		#e345ff
@@ -524,10 +524,12 @@ set $mediumgrey		#8b8b8b
 set $yellowbrown	#e1b700
 set $lightgreen    #4cd770
 set $darkdark    #0f0f0a
+set $darkred     #880808
+set $violet     #7F00FF
 
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
-client.focused		    	$lightgreen $darkblue	$white		$lightgreen	$lightgreen
+client.focused		    	$violet $darkblue	$white		$violet	$violet
 client.unfocused	    	$darkblue	$darkblue	$grey		$darkgrey	$darkgrey
 client.focused_inactive		$darkblue	$darkblue	$grey		$black		$black
 client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
@@ -563,7 +565,7 @@ strip_workspace_numbers yes
 		    background         $darkdark
 		    statusline         $white
 #                          		border 		        bg		txt		indicator
-		focused_workspace	$darkblue               $lightgreen		$darkgrey	$purple
+		focused_workspace	$darkblue               $violet		$darkgrey	$purple
 		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
 		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
 		urgent_workspace	$urgentred	    	$urgentred	$white		$purple

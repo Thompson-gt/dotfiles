@@ -1,5 +1,6 @@
 #!/bin/bash
-HEADPHONES_MAC=$(bluetoothctl devices | awk '{print$2}')
+b_devs=$(bluetoothctl devices | awk '{print$2}' )
+HEADPHONES_MAC=$(echo $b_devs | awk '{print$1}')
 ICON="🎧"
 
 
