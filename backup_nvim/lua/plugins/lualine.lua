@@ -14,6 +14,10 @@ return  {
             darkgreen1 = '#010300',
             lightgreen = '#4cd770',
             darkgreen2 = '#0f0f0a',
+            dark_purple = '#121520',
+            custom_violet = '#7F00FF',
+
+
         }
 
 
@@ -41,12 +45,12 @@ return  {
 
         local theme = {
             normal = {
-                a = { fg = colors.lightgreen, bg = colors.darkgreen1 },
-                b = { fg = colors.white, bg = colors.darkgreen1 },
-                c = { fg = colors.lightgreen, bg = colors.darkgreen1 },
-                x = { fg = colors.lightgreen, bg = colors.darkgreen1 },
-                y = { fg = colors.lightgreen, bg = colors.darkgreen1 },
-                z = { fg = colors.white, bg = colors.darkgreen1 },
+                a = { fg = colors.custom_violet, bg = colors.darkpurple },
+                b = { fg = colors.white, bg = colors.darkpurple },
+                c = { fg = colors.custom_violet, bg = colors.darkpurple },
+                x = { fg = colors.custom_violet, bg = colors.darkpurple },
+                y = { fg = colors.custom_violet, bg = colors.darkpurple },
+                z = { fg = colors.white, bg = colors.darkpurple },
             },
 
             insert = { a = { fg = colors.white, bg = colors.darkgreen1 } },

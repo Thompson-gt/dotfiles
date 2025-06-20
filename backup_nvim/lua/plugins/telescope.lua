@@ -35,7 +35,8 @@ return {
             darkgreen1 = '#010300',
             lightgreen = '#4cd770',
             darkgreen2 = '#0f0f0a',
+            custom_violet =    '#7F00FF',
         }
-        vim.api.nvim_set_hl(0, 'TelescopeBorder', {fg = colors.lightgreen})
-        vim.api.nvim_set_hl(0, 'TelescopePreviewMatch', {fg = colors.lightgreen})
+        vim.api.nvim_set_hl(0, 'TelescopeBorder', {fg = colors.custom_violet})
+        vim.api.nvim_set_hl(0, 'TelescopePreviewMatch', {fg = colors.custom_violet})
     end}
