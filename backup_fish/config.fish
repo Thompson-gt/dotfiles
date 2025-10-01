@@ -93,7 +93,12 @@ end
 
 
 
-bind -m default -k nul 'accept-autosuggestion'
+#need to do before the rebind of vi mode binds
+set -g fish_key_bindings fish_vi_key_bindings
+#old way 
+#bind -M insert -k nul 'accept-autosuggestion' repaint
+#new version way
+bind -M insert ctrl-space accept-autosuggestion repaint
  
 
 #END KEYBINDS
