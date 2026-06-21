@@ -2,12 +2,13 @@
 
 return {
     'nvim-treesitter/nvim-treesitter',
+    branch = 'main',
     build = function()
         local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
         ts_update()
     end,
     config = function()
-        require'nvim-treesitter.configs'.setup {
+        require'nvim-treesitter.config'.setup {
         -- A list of parser names, or "all"
         ensure_installed = { "vimdoc", "javascript", "typescript", "c", "lua", "rust" ,"go","bash"},
 
