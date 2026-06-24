@@ -1,8 +1,13 @@
 
 return {
-    'nvim-telescope/telescope.nvim', tag = '0.1.3',
+    'nvim-telescope/telescope.nvim',
+    --tag = '0.2.2',
     -- or                              , branch = '0.1.x',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    dependencies = {
+        'nvim-lua/plenary.nvim',
+        --{'nivm-telescope/telescope-fzf-native.nvim',build = {'make'}},
+
+    },
     config = function()
         local builtin = require('telescope.builtin')
         --map to fuzzy find through whole project, means file find
