@@ -43,7 +43,7 @@ return {
                 end,
                 -- this will give lsp support to the neovim functions
                 lua_ls = function()
-                    require('lspconfig').lua_ls.setup({
+                    require'lspconfig'.lua_ls.setup({
                         settings = {
                             Lua = {
                                 runtime = {
@@ -107,6 +107,7 @@ return {
         -- add aditional config to lsp 
         --
         --
+        vim.o.winborder = 'single'
         vim.diagnostic.config {
             underline = true,
             italic = true,
@@ -117,16 +118,6 @@ return {
             border = true,
 
         }
-
-        -- Add borders to floating windows
-        vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-        vim.lsp.handlers.hover,
-        {border = 'single'}
-        )
-        vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-        vim.lsp.handlers.signature_help,
-        {border = 'single'}
-        )
 
 
         -- removes the left shift when diagnostics start
@@ -143,23 +134,12 @@ return {
             },
         })
 
-
-
-
-        vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-            vim.lsp.handlers.hover,
-            { border = 'rounded' }
-        )
-        vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-            vim.lsp.handlers.signature_help,
-            { border = 'rounded' }
-        )
-
         vim.api.nvim_create_autocmd('LspAttach', {
             callback = function(event)
                 local opts = { buffer = event.buf }
-                vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-                vim.keymap.set("n", "gh", function() vim.lsp.buf.hover() end, opts)
+                -- now need to define the borders in the lspbuf call
+                vim.keymap.set("n", "gd", function() vim.lsp.buf.definition({border = 'rounded'})   end, opts)
+                vim.keymap.set("n", "gh", function() vim.lsp.buf.hover({border = 'rounded'})  end, opts)
                 vim.keymap.set("n", "gD", function() vim.lsp.buf.declaration() end, opts)
                 vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
                 vim.keymap.set("n", "gt", function() vim.lsp.buf.type_definition() end, opts)
